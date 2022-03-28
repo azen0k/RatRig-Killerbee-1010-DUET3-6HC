@@ -5,8 +5,6 @@
 G90            ; absolute positioning
 G1 Z103        ; lift Z to max height
 M5             ; stop spindle
-
-G90            ; absolute positioning
 G1 X0 Y771     ; go to back left
 
 
