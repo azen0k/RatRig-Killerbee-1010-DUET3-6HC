@@ -1,0 +1,8 @@
+; Jog-Q-Z-Probe.g - Quarter (6.4mm) endmill Z Probe, jog tool in position to touch plate B4 starting this macro
+; For use with Openbuilds XYZ Touch Probe Plus (10mm  edge thickness, 9mm top thickness).
+;
+
+G21                             ; Metric
+G38.2 Z-50 F100                 ; Seek along Z until contact with probe plate
+G10 L20 P1 Z9                   ; Store probe offset's in co-ordinates system for Y
+G91 G1 Z5 F300                  ; Back away from touch plate
