@@ -10,7 +10,7 @@ G1 H2 X5 Y-5 F6000       ; go back a few mm
 G1 H1 X-775 Y780 F360  ; move slowly to X and Y axis endstops once more (second pass)
 
 G90                     ; absolute positioning
-G92 Z118                  ; set Z position to axis minimum (you may want to adjust this)
+G92 Z118                  ; set Z position to axis maximum (you may want to adjust this)
 
 ; Uncomment the following lines to lift Z after probing
 ;G91                    ; relative positioning
