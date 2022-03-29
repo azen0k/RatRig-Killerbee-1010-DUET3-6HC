@@ -1,6 +1,7 @@
 ; Jog-Q-Z-Probe.g - Quarter (6.4mm) endmill Z Probe, jog tool in position to touch plate B4 starting this macro
 ; For use with Openbuilds XYZ Touch Probe Plus (10mm  edge thickness, 9mm top thickness).
 ;
+M291 P"Positionner la fraise au dessus de la sonde" R"Touch probe" S3 X1 Y1 Z1
 
 G21                             ; Metric
 G38.2 Z-50 F100                 ; Seek along Z until contact with probe plate
