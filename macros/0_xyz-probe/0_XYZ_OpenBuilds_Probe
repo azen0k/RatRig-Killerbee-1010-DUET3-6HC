@@ -8,15 +8,15 @@
 ;M98 P"/macros/0_xyz-probe/2_probe_files/Jog-Q-X-Probe"         ; run X-Probe.g from Macros directory in the DWC
 
 var ProbeThickness = 9;
-var ProbeXWidth = 58;
-var ProbeYWidth = 58;
+var ProbeXWidth = 54;
+var ProbeYWidth = 54;
 var CoordSystem	= 20;
 
 ; If the printer hasn't been homed, home it
 if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
 	G28
 
-M291 P"Insert a Dowel Pin into your spindle and center it in the probes hole" R"Probing" S3 X1 Y1 Z1
+M291 P"Positionner la fraise dans le trou de la sonde R"XYZ Probing" S3 X1 Y1 Z1
 
 ; Find center of cavity
 M675 X R2 F300 K0							; Find center in X axis
@@ -27,12 +27,12 @@ G10 P1 L{var.CoordSystem} X0 Y0						; Store X and Y as zero in CoordSystem
 ; Set bit above center of probe
 G91									; relative positioning
 G0 Z{var.ProbeThickness + 5}						; rapid move Z axis over the surface of the probe
-G0 X{var.ProbeXWidth / 2} Y{var.ProbeYWidth / 2}			; rapid move X and Y axis to middle of probe
+G0 X23 Y23						; rapid move X and Y axis to middle of probe
 
 ; Probe Z component
 G38.2 Z{move.axes[2].userPosition - (var.ProbeThickness + 5)}	; seek until the probe circuit is closed Z-axis 25 mm
 G0 Z5									; rapid move Z axis 5 mm
 G10 P1 L{var.CoordSystem} Z{var.ProbeThickness + 5}			; store relative probe offset for coordinates system 1
-G0 X{(var.ProbeXWidth / 2) * -1} Y{(var.ProbeYWidth / 2) * -1}		; go back over the hole
+G0 X0 Y0								; go back over the hole
 
 G90									; Absolute positioning
