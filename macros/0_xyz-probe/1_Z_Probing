@@ -1,4 +1,2 @@
 ; Calls all macros for quarter size bits on all axes
-M98 P"/macros/0_xyz-probe/2_probe_files/XY-Probe-center"           ; run XY-Probe-center.g from Macros directory in the DWC
-G4 S1                                      ; dwell (pause) for 1 sec
 M98 P"/macros/0_xyz-probe/2_probe_files/Jog-Q-Z-Probe"         ; run Z-Probe.g from Macros directory in the DWC
